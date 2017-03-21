@@ -235,7 +235,76 @@ $(document).ready(function () {
 </div>
 <div id="-" class="section level2">
 <h2>Ожидаемые значения</h2>
-<p>Математическое ожидание: <span class="math display">\[E[X]=\sum_x xp(x)\]</span></p>
+<div id="-" class="section level3">
+<h3>Математическое ожидание:</h3>
+<p><span class="math display">\[E[X]=\sum_x xp(x)\]</span></p>
+<p>Математическое ожидание выборки: <span class="math display">\[\bar{X}=\sum_{i=1}^n x_i p(x_i),\]</span> где <span class="math inline">\(p(x_i)=\frac{1}{n}\)</span>.</p>
+<p>Математическое ожидание выборки является несмещённой оценкой математического ожидания.</p>
+<p>Математическое ожидание является центром масс плотности распределения.</p>
+</div>
+<div class="section level3">
+<h3>Дисперсия</h3>
+<p>Дисперсия - мера разброса данных.</p>
+<p><span class="math display">\[Var(X)=E[(X-\mu)^2]=E[X^2]-E[X]^2\]</span></p>
+<p>Дисперсия - это математическое ожидание возведённого в квадрат отклонения от среднего значения. Стандартное отклонение - корень из дисперсии.</p>
+<p>Дисперсия выборки: <span class="math display">\[S^2=\frac{\sum_{i=1} (X_i-\bar{X})^2}{n-1}\]</span></p>
+</div>
+<div id="-" class="section level3">
+<h3>Стандартная ошибка</h3>
+<p>Вариация среднего значения выборки: <span class="math display">\[Var(\bar{X})=\frac{\sigma^2}{n},\]</span> где <span class="math inline">\(\sigma^2\)</span> - вариация популяции.</p>
+<p>Квадратный корень из вариации среднего значения выборки называется стандартной ошибкой.</p>
+</div>
+</div>
+<div class="section level2">
+<h2>Распределения</h2>
+<div id="-" class="section level3">
+<h3>Распределение Бернулли</h3>
+<p>Распределение Бернулли возникает в результате бинарного исхода. Случайная переменная принимает значения 1 и 0 с вероятностями p и (1-з) соответственно. Функция вероятности <span class="math inline">\(P(X=x)=p^x(1-p)^{1-x}\)</span>.</p>
+<p><span class="math display">\[\mu=\sigma=p(1-p)\]</span></p>
+</div>
+<div id="-" class="section level3">
+<h3>Биномиальное распределение</h3>
+<p>Биномиальная случайная переменная получается как сумма независимых одинаково распределённых бинарных переменных. Если переменная Бернулли - результат броска монеты, то биномиальная переменная - полное число “орлов”.</p>
+<p><span class="math display">\[P(X=x)=\begin{pmatrix} n \\ x \end{pmatrix} p^x (1-p)^{n-x}\]</span></p>
+<p><span class="math display">\[\begin{pmatrix} n \\ x \end{pmatrix}=\frac{n!}{x!(n-x)!}\]</span></p>
+</div>
+<div id="-" class="section level3">
+<h3>Нормальное распределение</h3>
+<ol style="list-style-type: decimal">
+<li>Приблизительно 68%, 95%, 99% площади под плотностью вероятности лежат внутри 1, 2, 3 стандартных отклонения от среднего.</li>
+<li>1.28, 1.645, 1.96, 2.33 соответствуют 90, 97, 97.5, 99-му перцентилям.</li>
+</ol>
+</div>
+<div id="-" class="section level3">
+<h3>Распределение Пуассона</h3>
+<p><span class="math display">\[P(X=x; \lambda)=\frac{\lambda^x e^{-\lambda}}{x!}\]</span></p>
+<p><span class="math display">\[\mu=\sigma=\lambda\]</span></p>
+<p><span class="math display">\[x \in [0,\infty)\]</span></p>
+<p>Биномиальное распределение переходит в распределение Пуассона, если n - большое, а p - маленькое. <span class="math inline">\(\lambda=np\)</span>.</p>
+</div>
+</div>
+<div id="--" class="section level2">
+<h2>Центральная предельная теорема</h2>
+<p>Распределение усреднений независимых одинаково распределённых переменных становится нормальным с ростом величины выборки.</p>
+</div>
+<div id="-" class="section level2">
+<h2>Доверительные интервалы</h2>
+<p>Доверительный интервал является способом количественного выражения неопределённости оценки. Ширина интервала характеризует случайность, препятствующую получению точной оценки.</p>
+<div id="------" class="section level3">
+<h3>Схема построения с использованием центральной предельной теоремы</h3>
+<p>Пусть <span class="math inline">\(\bar{X}\)</span> - приблизительно нормальная величина со средним <span class="math inline">\(\mu\)</span> и стандартным отклонением <span class="math inline">\(\sigma/\sqrt{n}\)</span>.</p>
+<p>Тогда значения <span class="math inline">\(\bar{X}&gt;\mu+2\sigma/\sqrt{n}\)</span> составляют только 2.5% (2 здесь указано как два стандартных отклонения). <span class="math inline">\(\bar{X}&lt;\mu-2\sigma/\sqrt{n}\)</span> также составляют около 2.5%. Поэтому суммарная вероятность того, что <span class="math inline">\(\bar{X}\)</span> больше <span class="math inline">\(\mu+2\sigma/\sqrt{n}\)</span> и что <span class="math inline">\(\bar{X}\)</span> меньше <span class="math inline">\(\mu-2\sigma/\sqrt{n}\)</span> составляет 5%. Вероятность, что среднее значение лежит внутри этого интервала составляет 95%. Величина <span class="math display">\[\bar\pm 2\sigma/\sqrt{n}\]</span> называется 95%-ым интервалом для <span class="math inline">\(\mu\)</span>. 95% означает, что если провести множество испытаний с размером выборки <span class="math inline">\(n\)</span>, то 95% интервалов будут содержать <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<div id="----" class="section level3">
+<h3>Доверительный интервал для биномиального распределения</h3>
+<p>Пусть <span class="math inline">\(X_i \in {0,1}\)</span> с вероятностью успеха <span class="math inline">\(p\)</span>. Интервал принимает вид <span class="math inline">\(\hat{p} \pm z_{1-\alpha/2}\sqrt{\frac{p(1-p)}{n}}\)</span>. Заменяя <span class="math inline">\(p\)</span> на <span class="math inline">\(\hat{p}\)</span>, получаем доверительный интервал Вальда для <span class="math inline">\(p\)</span>. Здесь <span class="math inline">\(\hat{p}\)</span> - вероятность, полученная по выборке. <span class="math inline">\(max(p(1-p))=1/4\)</span>, рассмотрим 95% интервал, тогда <span class="math inline">\(z=2\)</span>: <span class="math display">\[\hat{p} \pm \frac{1}{\sqrt{n}}\]</span> - быстрая оценка доверительного интервала.</p>
+<p>Если проводить множество испытаний, то интервал Вальда при <span class="math inline">\(p \neq 0.5\)</span> даёт меньшую вероятность попадания среднего значения в него, чем 95%. Это связано с тем, что для ограниченного размера выборки распределение усреднений только приблизительно соответствует нормальному.</p>
+<p>Покрытие доверительным интервалом появляющихся в результате экспериментов средних значений может быть существенно улучшено за счёт использования Agresti-Coull интервала. Наиболее простой вариант его построения заключается в добавлении двух успехов и двух неуспехов.</p>
+</div>
+<div id="----" class="section level3">
+<h3>Доверительный интервал для распределения Пуассона</h3>
+<p><span class="math display">\[\hat{\lambda} \pm z_{1-\alpha/2}\sqrt{\frac{\hat{\lambda}}{t}}\]</span></p>
+</div>
 </div>
 
 
