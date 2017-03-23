@@ -378,6 +378,16 @@ $(document).ready(function () {
 <li><p>Вывод об истинности гипотезы. Наблюдаемые значения выборки подставляются в статистику <span class="math inline">\(\phi\)</span> и по попаданию (или непопаданию) в критическую область <span class="math inline">\(\mathbb{C}\)</span> выносится решение об отвержении (или принятии) выдвинутой гипотезы <span class="math inline">\(H_{0}\)</span>.</p></li>
 </ol>
 </div>
+<div id="---" class="section level3">
+<h3>Связь с доверительными интервалами</h3>
+<p>Пусть <span class="math inline">\(H_{0}: \mu=\mu_{0}\)</span> и <span class="math inline">\(H_{a}: \mu \neq \mu_{0}\)</span>. Множество всех возможных значений, для которых гипотезу <span class="math inline">\(H_{0}\)</span> отклонить не удастся составляет <span class="math inline">\((1-\alpha)*100%\)</span>-доверительный интервал для <span class="math inline">\(\mu\)</span>.</p>
+<p>И обратно, если <span class="math inline">\((1-\alpha)100%\)</span>-интервал содержит <span class="math inline">\(\mu_{0}\)</span>, то гипотеза <span class="math inline">\(H_{0}\)</span> остаётся неопровергнутой.</p>
+</div>
+<div id="---" class="section level3">
+<h3>Интервал для двух групп</h3>
+<p>Рассмотрим <span class="math inline">\(H_{0}: \mu=\mu_{0}\)</span>. <span class="math display">\[\frac{\bar{X_1}-\bar{X_2}-(\mu_{1}-\mu_{2})}{S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\]</span> - статистика для групп с равными дисперсиями.</p>
+<p><span class="math display">\[\frac{\bar{X_1}-\bar{X_2}-(\mu_{1}-\mu_{2})}{\sqrt(\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2})}\]</span> - статистика для случая разных дисперсий.</p>
+</div>
 </div>
 
 
